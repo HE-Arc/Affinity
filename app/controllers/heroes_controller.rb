@@ -3,6 +3,10 @@ class HeroesController < ApplicationController
   def index
     @heroes = Hero.all
   end
+  
+  def information
+    @hero = Hero.find(:id)
+  end
 
   def new
     @hero = Hero.new
