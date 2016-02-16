@@ -12,6 +12,9 @@
 # ruby mine
 .idea
 
+# database specifics, to separate configs of various workstations and production server
+/config/database.yml
+
 # copy paste from https://github.com/github/gitignore/blob/master/Rails.gitignore
 *.rbc
 capybara-*.html
