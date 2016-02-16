@@ -4,6 +4,13 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
@@ -11,6 +18,10 @@
 
 # ruby mine
 .idea
+
+# Windows - Linux shabang conflict prevention
+/bin/*
+
 
 # database specifics, to separate configs of various workstations and production server
 /config/database.yml
