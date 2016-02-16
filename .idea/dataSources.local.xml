@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails Affinity: development" uuid="8ec105dd-240f-433a-83ee-c80c062b1b77">
+      <first-sync>true</first-sync>
+      <user-name>postgres</user-name>
+      <user-password>dfcbdfcedfc7dfc3dfc4</user-password>
+    </data-source>
+    <data-source name="Rails Affinity: test" uuid="4b5b2afd-161d-4476-8c89-3a5e95d5be68">
+      <first-sync>true</first-sync>
+      <user-name>postgres</user-name>
+      <user-password>dfcbdfcedfc7dfc3dfc4</user-password>
+    </data-source>
+    <data-source name="Rails Affinity: production" uuid="c1d45d34-5587-46f7-9ac6-4265eaef3eca">
+      <first-sync>true</first-sync>
+      <user-name>postgres</user-name>
+      <user-password>dfcbdfcedfc7dfc3dfc4</user-password>
+    </data-source>
+  </component>
+</project>

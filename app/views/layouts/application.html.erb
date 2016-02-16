@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Affinity</title>
+  <!-- 'application' parameter not supported by windows, use 'default' instead -->
+  <!-- source : http://stackoverflow.com/questions/28421547/rails-execjsprogramerror-in-pageshome -->
+  <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
