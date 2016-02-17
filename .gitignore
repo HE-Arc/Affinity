@@ -17,7 +17,7 @@
 /tmp
 
 # ruby mine
-.idea
+.idea/*
 
 # Windows - Linux shabang conflict prevention
 /bin/*
