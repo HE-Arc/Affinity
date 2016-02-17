@@ -50,13 +50,13 @@ default: &default
 development:
   <<: *default
   database: affinity_development
-  user: <%= ENV["POSTGRES_USERNAME"] %>
+  user: <%= ENV["POSTGRES_USERNAME_DEFAULT"] %>
   password: <%= ENV["POSTGRES_PASSWORD"] %>
 
 test:
   <<: *default
   database: affinity_test
-  user: <%= ENV["POSTGRES_USERNAME"] %>
+  user: <%= ENV["POSTGRES_USERNAME_DEFAULT"] %>
   password: <%= ENV["POSTGRES_PASSWORD"] %>
 
 staging:
