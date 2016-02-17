@@ -49,7 +49,7 @@ namespace :deploy do
   after :finished, :restart_puma do
     on roles(:web) do
       sudo 'sv restart puma'
-      sudo 'rm -r /tmp/' + :application
+      sudo 'rm -r /tmp/Affinity'
 
       #execute :sudo, 'sv restart puma'
     end
