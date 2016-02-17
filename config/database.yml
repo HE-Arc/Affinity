@@ -24,7 +24,13 @@
 #  <<: *default
 #  database: db/production.sqlite3
 
-<% require 'win32ole' %>
+<%
+begin
+  include 'win32ole'
+rescue
+  #Not Windows
+end
+%>
 
 <%
   ENV.to_hash.each do |key, value|
