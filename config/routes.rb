@@ -56,5 +56,6 @@ Rails.application.routes.draw do
 
   get "/" => "heroes#index"
   get "/heroes" => "heroes#index"
+  get "/hero/:id" => "heroes#information"
 
 end
