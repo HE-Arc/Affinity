@@ -3,6 +3,7 @@ lock '3.4.0'
 
 set :application, 'Affinity'
 set :repo_url, 'git@github.com:HE-Arc/Affinity.git'
+#set :repo_url, 'https://github.com/HE-Arc/Affinity.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -42,13 +43,19 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-      execute :sudo, 'sv restart puma'
     end
   end
-# Source the environment variable beforehand.
-  prefix = 'source ~/.bash_profile;'
-    [:bundle, :rake, :rails].each do |cmd|
-    SSHKit.config.command_map.prefix[cmd].push(prefix)
-  end
 
+  after :finished, :restart_puma do
+    on roles(:web) do
+      sudo 'sv restart puma'
+      #execute :sudo, 'sv restart puma'
+    end
+  end
+end
+
+# Source the environment variable beforehand.
+prefix = 'source ~/.bash_profile;'
+[:bundle, :rake, :rails].each do |cmd|
+  SSHKit.config.command_map.prefix[cmd].push(prefix)
 end
