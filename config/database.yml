@@ -24,23 +24,31 @@
 #  <<: *default
 #  database: db/production.sqlite3
 
-development:
+default: &default
   adapter: postgresql
-  encoding: utf8
-  database: affinity_development
+  encoding: unicode
   pool: 5
-  username: quentin
+  host: postgres
+  user: postgres
+  password: <%= ENV["POSTGRES_ENV_POSTGRES_PASSWORD"] %>
+
+development:
+  <<: *default
+  database: affinity_development
 
 test:
-  adapter: postgresql
-  encoding: utf8
+  <<: *default
   database: affinity_test
-  pool: 5
-  username: quentin
+
+staging:
+  <<: *default
+  database: <%= ENV["POSTGRES_USERNAME"] %>
+  user: <%= ENV["POSTGRES_USERNAME"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
 
 production:
-  adapter: postgresql
-  encoding: utf8
-  database: affinity_production
-  pool: 5
-  username: quentin
+  <<: *default
+  database: <%= ENV["POSTGRES_USERNAME"] %>
+  username: <%= ENV["POSTGRES_USERNAME"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
+  schema_search_path: production
