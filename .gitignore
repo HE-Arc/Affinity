@@ -24,7 +24,6 @@
 
 
 # database specifics, to separate configs of various workstations and production server
-/config/database.yml
 /config/deploy/*
 
 # copy paste from https://github.com/github/gitignore/blob/master/Rails.gitignore
