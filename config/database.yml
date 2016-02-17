@@ -28,8 +28,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  host: postgres
-  user: postgres
+  host: <%= ENV["POSTGRES_HOST"] %>
+  user: <%= ENV["POSTGRES_USERNAME"] %>
   password: <%= ENV["POSTGRES_ENV_POSTGRES_PASSWORD"] %>
 
 development:
