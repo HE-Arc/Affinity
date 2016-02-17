@@ -43,14 +43,19 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-      execute :sudo, 'sv restart puma'
     end
   end
 
-  # Source the environment variable beforehand.
-  prefix = 'source ~/.bash_profile;'
-    [:bundle, :rake, :rails].each do |cmd|
-    SSHKit.config.command_map.prefix[cmd].push(prefix)
+  after :finished, :restart_puma do
+    on roles(:web) do
+      sudo 'sv restart puma'
+      #execute :sudo, 'sv restart puma'
+    end
   end
+end
 
+# Source the environment variable beforehand.
+prefix = 'source ~/.bash_profile;'
+[:bundle, :rake, :rails].each do |cmd|
+  SSHKit.config.command_map.prefix[cmd].push(prefix)
 end
