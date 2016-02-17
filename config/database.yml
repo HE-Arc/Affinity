@@ -29,21 +29,18 @@ development:
   encoding: utf8
   database: affinity_development
   pool: 5
-  username: postgres
-  password: admin
+  username: quentin
 
 test:
   adapter: postgresql
   encoding: utf8
   database: affinity_test
   pool: 5
-  username: postgres
-  password: admin
+  username: quentin
 
 production:
   adapter: postgresql
   encoding: utf8
   database: affinity_production
   pool: 5
-  username: postgres
-  password: admin
+  username: quentin
