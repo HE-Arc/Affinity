@@ -24,6 +24,14 @@
 #  <<: *default
 #  database: db/production.sqlite3
 
+<% require 'win32ole' %>
+
+<%
+  ENV.to_hash.each do |key, value|
+      puts("#{key}\t#{value}")
+  end
+%>
+
 default: &default
   adapter: postgresql
   encoding: unicode
