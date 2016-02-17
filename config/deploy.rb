@@ -1,8 +1,9 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'app'
+set :application, 'Affinity'
 set :repo_url, 'git@github.com:HE-Arc/Affinity.git'
+#set :repo_url, 'https://github.com/HE-Arc/Affinity.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -45,7 +46,8 @@ namespace :deploy do
       execute :sudo, 'sv restart puma'
     end
   end
-# Source the environment variable beforehand.
+
+  # Source the environment variable beforehand.
   prefix = 'source ~/.bash_profile;'
     [:bundle, :rake, :rails].each do |cmd|
     SSHKit.config.command_map.prefix[cmd].push(prefix)
