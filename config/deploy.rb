@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'app'
+set :application, 'Affinity'
 set :repo_url, 'git@github.com:HE-Arc/Affinity.git'
 
 # Default branch is :master
