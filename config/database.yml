@@ -61,6 +61,7 @@ test:
 
 staging:
   <<: *default
+  host: postgres
   database: <%= ENV["POSTGRES_USERNAME"] %>
   user: <%= ENV["POSTGRES_USERNAME"] %>
   password: <%= ENV["POSTGRES_PASSWORD"] %>
