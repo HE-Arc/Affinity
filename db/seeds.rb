@@ -23,6 +23,7 @@ heroes["result"]["heroes"].each do |hero|
   db_name = hero["name"].sub(hero_prefix, "")
 
   Hero.create(
+      id: hero["id"],
       name: db_name,
       display_name: hero["localized_name"],
       uri: uri_template.sub(uri_placeholder, db_name)
