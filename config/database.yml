@@ -32,15 +32,6 @@ rescue
 end
 %>
 
-<%
-  ENV.to_hash.each do |key, value|
-      #filter postgres env variables
-      if key.start_with?("POSTGRES")
-        puts("#{key}\t#{value}")
-      end
-  end
-%>
-
 default: &default
   adapter: postgresql
   encoding: unicode
