@@ -10,17 +10,21 @@
 
 # heroes = {name => display name}
 
-heroes = {
-    "Earthshaker" => "Earthshaker",
-    "Shredder" => "Timbersaw",
-    "Wisp" => "Io",
-    "Doom Bringer" => "Doom",
-    "Obsidian Destroyer" => "Outworld Devourer"
-}
+require "json"
 
-uri = "http://cdn.dota2.com/apps/dota2/images/heroes/<hero_name>_full.png"
+heroes = JSON.parse(File.read("./db/migrate/resources/heroes.json"))
 
-heroes.each do |name, display_name|
-  db_name = name.downcase.sub(" ", "_")
-  Hero.create(name: db_name, display_name: display_name, uri: uri.sub("<hero_name>", db_name))
+uri_placeholder = "<hero_name>"
+uri_template = "http://cdn.dota2.com/apps/dota2/images/heroes/#{uri_placeholder}_full.png"
+
+hero_prefix = "npc_dota_hero_"
+
+heroes["result"]["heroes"].each do |hero|
+  db_name = hero["name"].sub(hero_prefix, "")
+
+  Hero.create(
+      name: db_name,
+      display_name: hero["localized_name"],
+      uri: uri_template.sub(uri_placeholder, db_name)
+  )
 end
