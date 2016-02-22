@@ -5,7 +5,7 @@ class HeroesController < ApplicationController
   end
   
   def information
-    @hero = Hero.find(:id)
+    @hero = Hero.find(params[:id])
   end
 
   def new
