@@ -62,3 +62,6 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_historyy
+
+#ignore docker-compose for personnal configuration
+docker-compose.yml
