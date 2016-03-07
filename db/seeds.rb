@@ -32,6 +32,6 @@ end
 
 # Add attributs default values 
 
-Attribute.create(name: "Strenght")
+Attribute.create(name: "Strength")
 Attribute.create(name: "Agility")
 Attribute.create(name: "Intelligence")
