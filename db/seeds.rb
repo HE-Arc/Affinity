@@ -8,9 +8,10 @@
 
 # Add a few sample data
 
-# heroes = {name => display name}
-
 require "json"
+
+# POPULATE HEROES
+# Seeding done by a local json file gathered from the Steam Web API
 
 heroes = JSON.parse(File.read("./db/migrate/resources/heroes.json"))
 
@@ -29,3 +30,22 @@ heroes["result"]["heroes"].each do |hero|
       uri: uri_template.sub(uri_placeholder, db_name)
   )
 end
+
+# POPULATE AFFINITIES
+# Generating random pairs of heroes and attributing them random score
+# TODO Generate every pair of heroes and attribute score based on match data gathered from the Steam Web API
+
+#NB Find a way to use heroes index, just in case they decide to change
+
+for i in 0..9
+  for j in 0..9
+    if i != j
+      Relation.create(
+          hero_left: i,
+          hero_right: j,
+          score: rand(100)
+      )
+    end
+  end
+end
+
