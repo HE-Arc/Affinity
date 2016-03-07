@@ -29,3 +29,9 @@ heroes["result"]["heroes"].each do |hero|
       uri: uri_template.sub(uri_placeholder, db_name)
   )
 end
+
+# Add attributs default values 
+
+Attribute.create(name: "Strenght")
+Attribute.create(name: "Agility")
+Attribute.create(name: "Intelligence")
