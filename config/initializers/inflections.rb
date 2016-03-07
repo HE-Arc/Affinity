@@ -17,4 +17,5 @@
 
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular "hero", "heroes"
+  inflect.irregular "affinity", "affinities"
 end
