@@ -24,7 +24,7 @@ heroes["result"]["heroes"].each do |hero|
   db_name = hero["name"].sub(hero_prefix, "")
 
   Hero.create(
-      id: hero["id"],
+      id: hero[:id],
       name: db_name,
       display_name: hero["localized_name"],
       uri: uri_template.sub(uri_placeholder, db_name)
@@ -32,20 +32,19 @@ heroes["result"]["heroes"].each do |hero|
 end
 
 # POPULATE AFFINITIES
-# Generating random pairs of heroes and attributing them random score
+# Generating all pairs of heroes and attributing them random score
 # TODO Generate every pair of heroes and attribute score based on match data gathered from the Steam Web API
 
-#NB Find a way to use heroes index, just in case they decide to change
+heroes = Hero.all
 
-for i in 0..9
-  for j in 0..9
-    if i != j
+heroes.each do |left|
+  heroes.each do |right|
+    if left[:id] != right[:id]
       Relation.create(
-          hero_left: i,
-          hero_right: j,
-          score: rand(100)
+          hero_left: left[:id],
+          hero_right: right[:id],
+          score: rand(200) - 100
       )
     end
   end
 end
-
