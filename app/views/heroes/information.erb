@@ -6,4 +6,8 @@
   <p>
     <%= @hero.name %>
   </p>
+
+  <% @good_heroes.each do |good| %>
+    <p><%= good.name %></p>
+  <% end %>
 </article>

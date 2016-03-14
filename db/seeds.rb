@@ -31,6 +31,12 @@ heroes["result"]["heroes"].each do |hero|
   )
 end
 
+# Add attributs default values
+Attribute.create(name: "Strength")
+Attribute.create(name: "Agility")
+Attribute.create(name: "Intelligence")
+
+
 # POPULATE AFFINITIES
 # Generating all pairs of heroes and attributing them random score
 # TODO Generate every pair of heroes and attribute score based on match data gathered from the Steam Web API
