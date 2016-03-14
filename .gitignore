@@ -65,3 +65,6 @@ bower.json
 
 #ignore docker-compose for personnal configuration
 docker-compose.yml
+/nbproject/private/
+nbproject/project.properties
+nbproject/project.xml
