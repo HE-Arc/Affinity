@@ -6,6 +6,16 @@ class HeroesController < ApplicationController
   
   def information
     @hero = Hero.find(params[:id])
+
+    #Get 5 good affinites heroes
+    @goods = Relation.where(:hero_left == params[:id]).order("score desc").limit(5)
+
+    @good_heroes = []
+    @goods.each do |good|
+      @good_heroes.append(Hero.find(good.hero_left))
+    end
+
+    #Get 5 bad affinities heroes
   end
 
   def new
