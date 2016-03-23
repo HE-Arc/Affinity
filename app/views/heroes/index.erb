@@ -1,8 +1,18 @@
-<% @attributes.each do |attr| %>
-<p> <%= attr.name %>  </p>
-<% @heroes = attr.heroes %>
-    <% @heroes.each do |hero| %>
-        <%= image_tag hero.uri %><%= hero.display_name %> <%= hero.attribute_id %>
-     <% end %>
+<% content_for :title do %>
+     Heroes list 
 <% end %>
+
+<div class="row">
+    <% @attributes.each do |attr| %>     
+        <div class="large-4 column"> 
+        <h3><%= attr.name %></h3>
+            <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+                <% @heroes_attr = attr.heroes %>
+                <% @heroes_attr.each do |hero| %>
+                    <li><%= image_tag hero.uri %> </li><%= hero.display_name %> <%= hero.attribute_id %>
+                 <% end %>
+             </ul>
+        </div>
+    <% end %>
+</div>
 

@@ -57,6 +57,5 @@ end
 
 srand(1)
 heroes.each do |t|  
-#   var = rand(1..3)  
     t.update_column(:attribute_id, rand(1..3))
 end

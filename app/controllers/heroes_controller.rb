@@ -1,5 +1,5 @@
 class HeroesController < ApplicationController
-
+   
   def index
 #   @heroes = Hero.all  
     @attributes = Attribute.all
