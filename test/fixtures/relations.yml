@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hero_left: 1
+  hero_right: 1
+  score: 1
+
+two:
+  hero_left: 1
+  hero_right: 1
+  score: 1
