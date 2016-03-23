@@ -1,13 +1,37 @@
-<article>
-  <header>
-    <h1>Hero information</h1>
-  </header>
-  <%= image_tag @hero.uri %>
-  <p>
-    <%= @hero.name %>
-  </p>
+<div class="row main-row" data-equalizer>
+  <div class="small-2 medium-2 large-2 columns main-col y-center" data-equalizer-watch>
+    <p><%= image_tag @hero.uri %></p>
+    <p><%= @hero.display_name %></p>
+  </div>
 
-  <% @good_heroes.each do |good| %>
-    <p><%= good.name %></p>
-  <% end %>
-</article>
+  <div class="small-10 medium-10 large-10 columns affinities-col" data-equalizer-watch>
+    <div class="row good">
+      <div class="small-1 medium-1 large-1 columns"></div>
+
+      <% @good_heroes.each do |good| %>
+          <div class="small-2 medium-2 large-2 columns center">
+
+            <%= link_to "HERO", good %>
+
+              <p><%= image_tag good.uri, class: "portrait-good" %></p>
+              <p><%= good.display_name %></p>
+          </div>
+      <% end %>
+
+      <div class="small-1 medium-1 large-1 columns"></div>
+    </div>
+
+    <div class="row bad">
+      <div class="small-1 medium-1 large-1 columns"></div>
+
+      <% @bad_heroes.each do |bad| %>
+        <div class="small-2 medium-2 large-2 columns">
+          <p><%= image_tag bad.uri, class: "portrait-bad" %></p>
+          <p><%= bad.display_name %></p>
+        </div>
+      <% end %>
+
+      <div class="small-1 medium-1 large-1 columns"></div>
+    </div>
+  </div>
+</div>
