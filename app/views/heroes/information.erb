@@ -11,8 +11,6 @@
       <% @good_heroes.each do |good| %>
           <div class="small-2 medium-2 large-2 columns center">
 
-            <%= link_to "HERO", good %>
-
               <p><%= image_tag good.uri, class: "portrait-good" %></p>
               <p><%= good.display_name %></p>
           </div>
