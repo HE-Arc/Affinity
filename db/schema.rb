@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307120101) do
+ActiveRecord::Schema.define(version: 20160314121455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,10 @@ ActiveRecord::Schema.define(version: 20160307120101) do
     t.text     "uri"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "attribute_id"
   end
+
+  add_index "heroes", ["attribute_id"], name: "index_heroes_on_attribute_id", using: :btree
 
   create_table "relations", force: :cascade do |t|
     t.integer  "hero_left"

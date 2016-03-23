@@ -1,5 +1,8 @@
-<% @heroes.each do |hero| %>
-<p>
-  <%= image_tag hero.uri %><%= hero.display_name %>
-</p>
+<% @attributes.each do |attr| %>
+<p> <%= attr.name %>  </p>
+<% @heroes = attr.heroes %>
+    <% @heroes.each do |hero| %>
+        <%= image_tag hero.uri %><%= hero.display_name %> <%= hero.attribute_id %>
+     <% end %>
 <% end %>
+
