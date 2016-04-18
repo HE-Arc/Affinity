@@ -53,9 +53,11 @@ heroes.each do |left|
       )
     end
   end
+
+  puts "Created relations for #{left.name}"
 end
 
 srand(1)
-heroes.each do |t|  
+heroes.each do |t|
     t.update_column(:attribute_id, rand(1..3))
 end
